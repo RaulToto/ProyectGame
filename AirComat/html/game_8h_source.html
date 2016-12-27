@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>AirCombat: Fichero Fuente game.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="BossEnemy.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">AirCombat
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">game</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">game.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="game_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GAME_H</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define GAME_H</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//file includes</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="score_8h.html">score.h</a>&quot;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bossenemy_8h.html">bossenemy.h</a>&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="basicenemy_8h.html">basicenemy.h</a>&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bullet_8h.html">bullet.h</a>&quot;</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="healht_8h.html">healht.h</a>&quot;</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="enemycontroller_8h.html">enemycontroller.h</a>&quot;</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="background_8h.html">background.h</a>&quot;</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">//qt includes</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;QGraphicsView&gt;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;QGraphicsWidget&gt;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;QGraphicsTextItem&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_game.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game.html">Game</a>:<span class="keyword">public</span> QGraphicsView</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_game.html#ae3c64a8dd73de0a99849db8ec0e9a86c">Game</a>(QWidget *parent=0);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#af74fd203e3b31917ca9d4769fa608c48">displayMainMenu</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ac7d371f3f30513a4f3c57f521fac9b5f">gameOver</a>();</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a574eb7e3a432099107f3fb3150d2d6ad">youWin</a>();</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//void start();</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">//void gameOver(bool);</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">//----------objects</span></div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_game.html#a8119e3b9a632906c6808fa294b46a92a">   44</a></span>&#160;    QGraphicsScene *<a class="code" href="class_game.html#a8119e3b9a632906c6808fa294b46a92a">scene</a>;</div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_game.html#abec70aa1c0269a9a7e171af4d79e08bf">   45</a></span>&#160;    <a class="code" href="class_player.html">Player</a> *<a class="code" href="class_game.html#abec70aa1c0269a9a7e171af4d79e08bf">player</a>;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="class_game.html#ad195acc6b5ee17a5a07fea0b7b4ff5e2">   46</a></span>&#160;    <a class="code" href="class_score.html">Score</a> *<a class="code" href="class_game.html#ad195acc6b5ee17a5a07fea0b7b4ff5e2">score</a>;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_game.html#af7860ba10bf58b4bfed1e00f5f699755">   47</a></span>&#160;    <a class="code" href="class_healht.html">Healht</a> *<a class="code" href="class_game.html#af7860ba10bf58b4bfed1e00f5f699755">healht</a>;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_game.html#a14c5877efccfde28a30d4d15f7dd68be">   48</a></span>&#160;    <a class="code" href="class_basic_enemy.html">BasicEnemy</a> *<a class="code" href="class_game.html#a14c5877efccfde28a30d4d15f7dd68be">basicEnemy</a>;</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_game.html#a1732035088c7b0150817197895116097">   49</a></span>&#160;    <a class="code" href="class_enemy_controller.html">EnemyController</a> *<a class="code" href="class_game.html#a1732035088c7b0150817197895116097">enemyController</a>;</div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_game.html#a24b3b9175f68e174b9cc88c4372fee68">   50</a></span>&#160;    <a class="code" href="class_boss_enemy.html">BossEnemy</a> *<a class="code" href="class_game.html#a24b3b9175f68e174b9cc88c4372fee68">bossEnemy</a>;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="class_game.html#a524bd09cf01b51b835f6c574c88ed0ee">   51</a></span>&#160;    <a class="code" href="class_back_ground.html">BackGround</a> *<a class="code" href="class_game.html#a524bd09cf01b51b835f6c574c88ed0ee">backGround</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a3d9b98f7c4a96ecf578f75b96c9f0e90">start</a>();</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif // GAME_H</span></div><div class="ttc" id="class_score_html"><div class="ttname"><a href="class_score.html">Score</a></div><div class="ttdef"><b>Definition:</b> score.h:12</div></div>
+<div class="ttc" id="class_game_html_a524bd09cf01b51b835f6c574c88ed0ee"><div class="ttname"><a href="class_game.html#a524bd09cf01b51b835f6c574c88ed0ee">Game::backGround</a></div><div class="ttdeci">BackGround * backGround</div><div class="ttdef"><b>Definition:</b> game.h:51</div></div>
+<div class="ttc" id="basicenemy_8h_html"><div class="ttname"><a href="basicenemy_8h.html">basicenemy.h</a></div><div class="ttdoc">this class is to representation of basic enemy if you killed basic enemy you score increase if you sc...</div></div>
+<div class="ttc" id="healht_8h_html"><div class="ttname"><a href="healht_8h.html">healht.h</a></div></div>
+<div class="ttc" id="class_back_ground_html"><div class="ttname"><a href="class_back_ground.html">BackGround</a></div><div class="ttdef"><b>Definition:</b> background.h:13</div></div>
+<div class="ttc" id="class_game_html_abec70aa1c0269a9a7e171af4d79e08bf"><div class="ttname"><a href="class_game.html#abec70aa1c0269a9a7e171af4d79e08bf">Game::player</a></div><div class="ttdeci">Player * player</div><div class="ttdef"><b>Definition:</b> game.h:45</div></div>
+<div class="ttc" id="class_game_html_a574eb7e3a432099107f3fb3150d2d6ad"><div class="ttname"><a href="class_game.html#a574eb7e3a432099107f3fb3150d2d6ad">Game::youWin</a></div><div class="ttdeci">void youWin()</div><div class="ttdoc">youWin function for finish game </div><div class="ttdef"><b>Definition:</b> game.cpp:104</div></div>
+<div class="ttc" id="player_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div></div>
+<div class="ttc" id="class_enemy_controller_html"><div class="ttname"><a href="class_enemy_controller.html">EnemyController</a></div><div class="ttdef"><b>Definition:</b> enemycontroller.h:13</div></div>
+<div class="ttc" id="class_game_html_ae3c64a8dd73de0a99849db8ec0e9a86c"><div class="ttname"><a href="class_game.html#ae3c64a8dd73de0a99849db8ec0e9a86c">Game::Game</a></div><div class="ttdeci">Game(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> game.cpp:12</div></div>
+<div class="ttc" id="enemycontroller_8h_html"><div class="ttname"><a href="enemycontroller_8h.html">enemycontroller.h</a></div><div class="ttdoc">this class is for controller enemy for exmaple to control your live or number enemies ...</div></div>
+<div class="ttc" id="class_game_html_a1732035088c7b0150817197895116097"><div class="ttname"><a href="class_game.html#a1732035088c7b0150817197895116097">Game::enemyController</a></div><div class="ttdeci">EnemyController * enemyController</div><div class="ttdef"><b>Definition:</b> game.h:49</div></div>
+<div class="ttc" id="class_game_html_a3d9b98f7c4a96ecf578f75b96c9f0e90"><div class="ttname"><a href="class_game.html#a3d9b98f7c4a96ecf578f75b96c9f0e90">Game::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">start is a slot connect with signal clicked </div><div class="ttdef"><b>Definition:</b> game.cpp:27</div></div>
+<div class="ttc" id="class_basic_enemy_html"><div class="ttname"><a href="class_basic_enemy.html">BasicEnemy</a></div><div class="ttdef"><b>Definition:</b> basicenemy.h:16</div></div>
+<div class="ttc" id="class_game_html_af7860ba10bf58b4bfed1e00f5f699755"><div class="ttname"><a href="class_game.html#af7860ba10bf58b4bfed1e00f5f699755">Game::healht</a></div><div class="ttdeci">Healht * healht</div><div class="ttdef"><b>Definition:</b> game.h:47</div></div>
+<div class="ttc" id="background_8h_html"><div class="ttname"><a href="background_8h.html">background.h</a></div><div class="ttdoc">this class is for place the image background at star of the game </div></div>
+<div class="ttc" id="class_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> game.h:24</div></div>
+<div class="ttc" id="bossenemy_8h_html"><div class="ttname"><a href="bossenemy_8h.html">bossenemy.h</a></div><div class="ttdoc">this class is toa representation a boss enemy if you killed a boss enemy you win the game ...</div></div>
+<div class="ttc" id="score_8h_html"><div class="ttname"><a href="score_8h.html">score.h</a></div></div>
+<div class="ttc" id="class_game_html_ad195acc6b5ee17a5a07fea0b7b4ff5e2"><div class="ttname"><a href="class_game.html#ad195acc6b5ee17a5a07fea0b7b4ff5e2">Game::score</a></div><div class="ttdeci">Score * score</div><div class="ttdef"><b>Definition:</b> game.h:46</div></div>
+<div class="ttc" id="class_boss_enemy_html"><div class="ttname"><a href="class_boss_enemy.html">BossEnemy</a></div><div class="ttdef"><b>Definition:</b> bossenemy.h:15</div></div>
+<div class="ttc" id="class_game_html_a8119e3b9a632906c6808fa294b46a92a"><div class="ttname"><a href="class_game.html#a8119e3b9a632906c6808fa294b46a92a">Game::scene</a></div><div class="ttdeci">QGraphicsScene * scene</div><div class="ttdef"><b>Definition:</b> game.h:44</div></div>
+<div class="ttc" id="class_game_html_ac7d371f3f30513a4f3c57f521fac9b5f"><div class="ttname"><a href="class_game.html#ac7d371f3f30513a4f3c57f521fac9b5f">Game::gameOver</a></div><div class="ttdeci">void gameOver()</div><div class="ttdoc">gameOver function for finish game </div><div class="ttdef"><b>Definition:</b> game.cpp:94</div></div>
+<div class="ttc" id="class_healht_html"><div class="ttname"><a href="class_healht.html">Healht</a></div><div class="ttdef"><b>Definition:</b> healht.h:13</div></div>
+<div class="ttc" id="bullet_8h_html"><div class="ttname"><a href="bullet_8h.html">bullet.h</a></div></div>
+<div class="ttc" id="class_player_html"><div class="ttname"><a href="class_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.h:14</div></div>
+<div class="ttc" id="class_game_html_a14c5877efccfde28a30d4d15f7dd68be"><div class="ttname"><a href="class_game.html#a14c5877efccfde28a30d4d15f7dd68be">Game::basicEnemy</a></div><div class="ttdeci">BasicEnemy * basicEnemy</div><div class="ttdef"><b>Definition:</b> game.h:48</div></div>
+<div class="ttc" id="class_game_html_af74fd203e3b31917ca9d4769fa608c48"><div class="ttname"><a href="class_game.html#af74fd203e3b31917ca9d4769fa608c48">Game::displayMainMenu</a></div><div class="ttdeci">void displayMainMenu()</div><div class="ttdoc">displayMainMenu show this function with game start </div><div class="ttdef"><b>Definition:</b> game.cpp:63</div></div>
+<div class="ttc" id="class_game_html_a24b3b9175f68e174b9cc88c4372fee68"><div class="ttname"><a href="class_game.html#a24b3b9175f68e174b9cc88c4372fee68">Game::bossEnemy</a></div><div class="ttdeci">BossEnemy * bossEnemy</div><div class="ttdef"><b>Definition:</b> game.h:50</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.12
+</small></address>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/Background.png</file>
+        <file>images/BasicEnemy.png</file>
+        <file>images/BossEnemy.png</file>
+        <file>images/Bullet.png</file>
+        <file>images/Missle.png</file>
+        <file>images/Player.png</file>
+        <file>images/res.qrc</file>
+        <file>images/aircombat.jpg</file>
+        <file>images/aircombat2.jpg</file>
+    </qresource>
+</RCC>

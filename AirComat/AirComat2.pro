@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     basicenemy.cpp \
     enemy.cpp \
     enemycontroller.cpp \
-    background.cpp
+    background.cpp \
+    gift.cpp
 
 HEADERS  += \
     player.h \
@@ -36,9 +37,12 @@ HEADERS  += \
     basicenemy.h \
     enemy.h \
     enemycontroller.h \
-    background.h
+    background.h \
+    gift.h
 
 FORMS    +=
 
 RESOURCES += \
     res.qrc
+
+DISTFILES +=

@@ -23,10 +23,13 @@ public:
      * @brief getHealth
      * @return return player live
      */
+    void showDecrease();
     int getHealth()
     {
         return vida;
     }
+    void healthIncrease();
+
 private:
     /**
      * @brief vida is a number for representation player live

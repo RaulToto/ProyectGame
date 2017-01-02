@@ -8,21 +8,29 @@ Healht::Healht(QGraphicsTextItem *parent)
     :QGraphicsTextItem(parent),vida(100)
 {
     setPlainText(QString("Health:")+QString::number(this->vida));
-    setDefaultTextColor(Qt::red);
+    setDefaultTextColor(Qt::blue);
     setFont(QFont("times",16));
 
 }
 void Healht::decrease(int n)
 {
     //if score is > 10 add 50 to live of player
-    if(game->score->getScore()>=10)
-    {
-        qDebug() <<"ingrease live";
-        this->vida+=50;
-        game->score->setScore(0);
-    }
     this->vida-=n;
+    setPlainText(QString("Health:")+QString::number(this->vida));
+    setPos(0,20);
+}
 
+void Healht::showDecrease()
+{
+    setPlainText(QString::number(-10));
+    setPos(game->player->x(),game->player->y());
+
+}
+
+void Healht::healthIncrease()
+{
+    //if score is > 10 add 50 to live of player
+    this->vida+=25;
     setPlainText(QString("Health:")+QString::number(this->vida));
 }
 

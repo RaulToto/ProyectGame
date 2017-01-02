@@ -9,5 +9,7 @@
         <file>images/res.qrc</file>
         <file>images/aircombat.jpg</file>
         <file>images/aircombat2.jpg</file>
+        <file>images/Health.png</file>
+        <file>images/Damage.png</file>
     </qresource>
 </RCC>

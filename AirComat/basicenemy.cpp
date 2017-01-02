@@ -10,10 +10,9 @@
 #include <ctime>
 #include <iomanip>
 #include <stdlib.h>
-using namespace std;
 BasicEnemy::BasicEnemy()
 {
-   int random_number= rand()%700;
+    int random_number= rand()%700;
     setPos(random_number,0);
 
     setPixmap(QPixmap(":/images/images/BasicEnemy.png"));
@@ -26,5 +25,10 @@ void BasicEnemy::move()
 {
 
     setPos(x(),y()+5);
+    if(pos().y()>600)
+    {
+        scene()->removeItem(this);
+        delete this;
+    }
 
 }

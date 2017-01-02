@@ -23,7 +23,7 @@ Bullet::Bullet(int speed)
         //bullet velocity of enemy
         timer1->start(game->enemyController->getVelBoth());
     }
-    else
+    else if(speed<0)
     {
         setPixmap(QPixmap(":/images/images/Bullet.png"));
         //connect
@@ -38,7 +38,14 @@ void Bullet::move()
     //if bullet collides with enemy ,destroy both
     QList<QGraphicsItem *> colliding_items=collidingItems();
     //if bullet updown
-    if(this->vel<0){
+    setPos(x(),y()+this->vel);
+    if(game->healht->getHealth()<2)
+    {
+        scene()->clear();
+        game->gameOver();
+    }
+
+    else if(game->enemyController->getEnemyNum() >0  && this->vel<0){
 
 
         for (int i = 0, n = colliding_items.size();i<n; ++i) {
@@ -46,7 +53,7 @@ void Bullet::move()
             {
                 game->score->increase();
                 game->enemyController->enemyNumDecrease();
-                qDebug() << game->enemyController->getEnemyNum();
+                //qDebug() << game->enemyController->getEnemyNum();
                 //remove them bhot
                 scene()->removeItem(colliding_items[i]);
                 scene()->removeItem(this);
@@ -62,33 +69,28 @@ void Bullet::move()
 
     }
     //if bullet getdwn
-    if(this->vel>0)
+    else if(this->vel>0 && game->healht->getHealth()>1)
     {
         for (int i = 0, n = colliding_items.size();i<n; ++i) {
             if(typeid(*(colliding_items[i]))==typeid(Player))
             { 
-                //if (game->enemyController->getEnemyNum()>0)
-                    //game->healht->decrease(1);
-                //else if(game->enemyController->getBossLive()>0)
-                game->healht->decrease(3);
+                game->healht->decrease(10);
+                //game->healht->showDecrease();
+                scene()->removeItem(this);
+                delete this;
 
-            }
-            if (game->healht->getHealth()<1)
-            {
-                scene()->clear();
-                game->gameOver();
             }
         }
     }
     //with bullet collides with boss enemy
-    if(game->enemyController->getBossLive()>0)
+    else if(game->enemyController->getBossLive()>0)
     {
         for (int i = 0, n = colliding_items.size();i<n; ++i) {
             if(typeid(*(colliding_items[i]))==typeid(BossEnemy))
             {
                 game->enemyController->bossLiveDecrease();
                 //remove them bhot
-                qDebug()<< game->enemyController->getBossLive();
+                //qDebug()<< game->enemyController->getBossLive();
 
                 scene()->removeItem(this);
                 delete this;
@@ -102,13 +104,11 @@ void Bullet::move()
     }
 
     //move bullet up destroy bullet
-    setPos(x(),y()+this->vel);
-    if(pos().y()<0 or pos().y() >600)
+
+    if(pos().y()<0 || pos().y()>600)
     {
         scene()->removeItem(this);
         delete this;
-        //qDebug() <<"pos" << pos().x() ;
-
+        //qDebug()  << "remove bullet";
     }
-
 }

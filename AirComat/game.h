@@ -16,6 +16,7 @@
 #include "healht.h"
 #include "enemycontroller.h"
 #include "background.h"
+#include "gift.h"
 //qt includes
 #include <QGraphicsScene>
 #include <QGraphicsView>
@@ -38,8 +39,7 @@ public:
      * @brief youWin function for finish game
      */
     void youWin();
-    //void start();
-    //void gameOver(bool);
+
     //----------objects
     QGraphicsScene *scene;
     Player *player;
@@ -49,6 +49,10 @@ public:
     EnemyController *enemyController;
     BossEnemy *bossEnemy;
     BackGround *backGround;
+    //Gift *gift;
+    //factory methots
+    Bullet *bulletFactory(int x);
+    BasicEnemy *basicEnemyFactory();
 public slots:
     /**
      * @brief start is a slot connect with signal clicked

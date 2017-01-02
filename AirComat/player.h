@@ -26,7 +26,8 @@ public slots:
     /**
      * @brief spawn is a slot
      */
-    void spawn();
+    void spawn();//spawn enemies
+    void spawnGift();
 };
 
 #endif // PLAYER_H

@@ -1,7 +1,7 @@
 #include "game.h"
-#include "healht.h"
 #include "basicenemy.h"
 #include "button.h"
+#include "healht.h"
 #include <QDebug>
 #include <QTimer>
 #include <QGraphicsTextItem>
@@ -53,10 +53,16 @@ void Game::start()
     //create a  boss enemy-------------------------------------------
     bossEnemy= new BossEnemy();
 
+    //timer for spaw enemies
     QTimer *timer= new QTimer();
     QObject::connect(timer,SIGNAL(timeout()),player,SLOT(spawn()));
     timer->start(1000);
 
+    QTimer *timer1= new QTimer();
+    QObject::connect(timer1,SIGNAL(timeout()),player,SLOT(spawnGift()));
+    timer1->start(6000);
+
+    //timer for spaw gift
     //show();
 }
 //display main menu with start game
@@ -109,4 +115,14 @@ void Game::youWin()
     winButton->setPos(qxPos,qyPos);
     connect(winButton,SIGNAL(clicked()),this,SLOT(close()));
     scene->addItem(winButton);
+}
+
+Bullet *Game::bulletFactory(int x)
+{
+    return new Bullet(x);
+}
+
+BasicEnemy *Game::basicEnemyFactory()
+{
+    return new BasicEnemy();
 }

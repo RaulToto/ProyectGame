@@ -12,8 +12,7 @@ INDICACIONES PARA JUGAR:
 -Si el boss o simplemente los enemigos normales lo matan es decir su salud llega a 0 ud pierde el juego en caso contrario logra vencer al boss ud gana el juego y termina la partida.
 
 -INDICACIONES PARA DESCARGAR
--git clone 
--
+-git clone https://github.com/RaulToto/ProyectGame.git
 
 
 

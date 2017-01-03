@@ -1,4 +1,4 @@
-# ProyectGame
+# AirCombat
 Air Combat:
 Es un juego que desarrole para un trabajo final de la universidad Nacinal de San Agustin en el curso de Introduccion a la Programacion Orientado a Objetos:
 El juego esta desarrolado en el lenguaje de programacion C++ y widgets de Qt comolibreria grafica.

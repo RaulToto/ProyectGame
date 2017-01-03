@@ -17,8 +17,10 @@ REQUERIMIENTOS
 -INDICACIONES PARA DESCARGAR
 Para Descargar:
 -git clone https://github.com/RaulToto/ProyectGame.git
+
 Cree su directorio de compilacion:
 -mkdir AirCombat/build && cd AirCombat/build/
+
 Despues ejecute Qmake 
 -qmake ../AirCombat/AirCombat.pro && make
 
